@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Saira+Condensed:wght@400;600&display=swap');
+
+:root {
+	--background-color: #000;
+	--text-color: #fff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+	color: var(--text-color);
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+body {
+	background-color: var(--background-color);
+	color: var(--text-color);
+}

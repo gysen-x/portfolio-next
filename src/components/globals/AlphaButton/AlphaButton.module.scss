@@ -1,0 +1,123 @@
+.button {
+	--text-color: #000;
+	--animation-duration: 5s;
+	--animation: ease-in-out;
+	--container-height: 1.6rem;
+	position: relative;
+	width: 15rem;
+	margin: 0;
+	padding: 0 1rem 0 0.5rem;
+	height: var(--variable);
+	background-color: transparent;
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		.leftSpan {
+			color: var(--text-color);
+		}
+		.rightSpan {
+			cursor: pointer;
+			color: var(--text-color);
+			&::after {
+				width: 10.5rem;
+			}
+		}
+	}
+}
+
+.span {
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: var(--span-text-color);
+}
+
+.leftSpan {
+	position: absolute;
+	left: -1rem;
+	top: calc(50% - 0.5rem);
+	margin-right: 1.2rem;
+	color: #fff;
+	animation: move-animation var(--animation-duration) var(--animation) infinite
+		alternate;
+	transition: color 0.3s ease-in-out;
+	&::after {
+		content: '';
+		position: absolute;
+		top: var(--top);
+		right: var(--right);
+		width: var(--line-width);
+		height: var(--line-height);
+		background-color: #fff;
+		animation: grow-animation var(--animation-duration) var(--animation)
+			infinite alternate;
+	}
+}
+
+.rightSpan {
+	--top: 0.7rem;
+	--distance: -1rem;
+	--line-width: 0.5rem;
+	--line-height: 0.2rem;
+	position: relative;
+	width: 10rem;
+	padding: 0.2rem 1.5rem;
+	color: #fff;
+	transition: color 0.3s ease-in-out;
+
+	svg {
+		fill: #fff;
+		position: absolute;
+		top: 0;
+		left: 1rem;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		animation: move-animation var(--animation-duration) var(--animation)
+			infinite alternate;
+	}
+}
+
+.rightSpan::before {
+	content: '';
+	position: absolute;
+	top: var(--top);
+	left: var(--distance);
+	width: var(--line-width);
+	height: var(--line-height);
+	background-color: #fff;
+	animation: grow-animation var(--animation-duration) var(--animation) infinite
+		alternate;
+}
+
+.rightSpan::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0.4rem;
+	width: 3.6rem;
+	height: 1.6rem;
+	background-color: #33c7a3;
+	z-index: -1;
+	transition: width 0.3s ease-in-out;
+}
+
+@keyframes move-animation {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(1rem);
+	}
+}
+
+@keyframes grow-animation {
+	0% {
+		width: 2rem;
+		transform: translateX(0);
+	}
+	100% {
+		width: 1rem;
+		transform: translateX(1rem);
+	}
+}

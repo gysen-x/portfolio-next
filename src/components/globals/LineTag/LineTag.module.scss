@@ -1,0 +1,22 @@
+.lineTag {
+	position: relative;
+	margin-bottom: 1rem;
+	text-align: right;
+	font-size: 1.5rem;
+	font-weight: 400;
+	letter-spacing: 0.5rem;
+	text-transform: uppercase;
+	color: #fff;
+	opacity: 0.5;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0.9rem;
+		left: -6rem;
+		width: 5rem;
+		height: 0.1rem;
+		background-color: #fff;
+		opacity: 0.5;
+	}
+}
