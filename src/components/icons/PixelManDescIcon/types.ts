@@ -1,3 +1,3 @@
 import { SVGProps } from 'react'
 
-export interface PixelManHeightIconProps extends SVGProps<SVGSVGElement> {}
+export interface PixelManDescIconProps extends SVGProps<SVGSVGElement> {}
